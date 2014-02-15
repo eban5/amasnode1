@@ -1,0 +1,33 @@
+
+Model
+
+3 Tier Model
+
+Bottlenecking
+
+index.php
+
+Apache - httpd - lifespan isn't long, waits for connection to come along
+problem: lots of connections at the same time will overwhelm your server with httpd's and not respond well.
+solution1: farm requests to Apache servers - send it off.
+
+new solution: 
+
+- chrome takes in the HTML
+- digests it - loads into DOM (CSS is there too)
+- Javascript loaded separately by Chrome into [V8 Engine]
+	asynchronous - like AJAX, fire off the XHR (5 states) waiting to get back to "4".
+	non-polling. waits for the response and makes the apprpriate change.
+
+made a server out of a Javascript enginer [V8]
+
+Requests Per Second
+php -> 3200 requests/sec
+html -> 3000 requests/sec
+V8 -> 5500 requests/sec
+
+JSON of entire table
+key : value
+
+DB query with nodeJS
+- doesn't have MYSQL installed
