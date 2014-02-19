@@ -28,7 +28,6 @@ http.createServer(function (request, response) {
     console.log("Values: " + query["title"]);
 
     });
-// Listen on the 8888 port. 
 }).listen(8888);
 
 /*
@@ -54,5 +53,3 @@ function start(response, postData) {
 */
 
 console.log("Server running at http://127.0.0.1:8888/");
-
-//exports.start = start;
