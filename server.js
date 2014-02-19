@@ -52,7 +52,7 @@ http.createServer(function (request, response) {
             });
 
     } else {
-            connection.query("SELECT * FROM musicData WHERE artist = '" + artistName + "';", function (error, rows, fields) {
+            connection.query("SELECT * FROM musicData WHERE artist = ?", [artistName], function (error, rows, fields) {
             response.writeHead(200, {"Content-Type": "text/plain"});
             response.write(JSON.stringify(rows));
             // response.end();
