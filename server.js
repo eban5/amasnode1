@@ -2,6 +2,7 @@
 
 // Include http and mysql module 
 var http = require('http'),
+    url = require('url'),
     mysql = require('mysql');
 
 // Create the connection
@@ -11,6 +12,14 @@ var connection = mysql.createConnection({
     password: "spring2014",
     database: "cs4720eea4ue"
 });
+
+/*
+    var pathname = url.parse(request.url).pathname;
+    var url_parts = url.parse(request.url, true);
+    var query = url_parts.query;
+    console.log("Request for " + pathname + " received.");
+    console.log("Values: " + query["foo"]);
+*/
 
 // Create the http server.
 http.createServer(function (request, response) {
