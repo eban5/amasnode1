@@ -3,7 +3,7 @@
 var http = require('http'),
     url = require('url'),
     mysql = require('mysql');
-// var port = process.env.PORT || 1337;
+    var port = process.env.PORT || 1337;
 
 var connection = mysql.createConnection({
     host: "stardock.cs.virginia.edu",
