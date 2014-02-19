@@ -21,26 +21,28 @@ http.createServer(function (request, response) {
     var pathname = url.parse(request.url).pathname;
     var url_parts = url.parse(request.url, true); //parse query string
     var query = url_parts.query;
-    console.log(JSON.stringify(query));
+    var artistName = pathname.substring(1, pathname.length); 
+    //console.log(JSON.stringify(query));
 
     console.log("Request for " + pathname + " received.");
-    //console.log("Values: " + query);
+    console.log( JSON.stringify(query));
+    console.log(artistName);
 
-if (pathname == "/this") {
-    connection.query("SELECT * FROM musicData WHERE artist = 'Pink Floyd'", function (error, rows, fields) {
-        console.log("Values: " + query);
+if (pathname == "" || pathname == "/") {
+    connection.query("SELECT * FROM musicData", function (error, rows, fields) {
         response.writeHead(200, {"Content-Type": "text/plain"});
         response.write(JSON.stringify(rows));
         response.end();
         });
 
 } else {
-    connection.query("SELECT * FROM musicData", function (error, rows, fields) {
-        console.log("Else"); //Values: " + query);
+        connection.query("SELECT * FROM musicData WHERE artist = '" + artistName + "'", function (error, rows, fields) {
+        //console.log("Values: " + query[]);
         response.writeHead(200, {"Content-Type": "text/plain"});
         response.write(JSON.stringify(rows));
         response.end();
         });
+
     }
     
 }).listen(8888);
