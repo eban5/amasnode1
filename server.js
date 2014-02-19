@@ -4,6 +4,7 @@
 var http = require('http'),
     url = require('url'),
     mysql = require('mysql');
+var port = process.env.PORT || 1337;
 
 // Create the connection
 var connection = mysql.createConnection({
@@ -28,7 +29,7 @@ http.createServer(function (request, response) {
     console.log("Values: " + query["title"]);
 
     });
-}).listen(8888);
+}).listen(port);
 
 /*
 function start(response, postData) {
