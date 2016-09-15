@@ -1,15 +1,13 @@
-//Esteban Amas, eea4ue, cs4720 HW4
-
 var http = require("http"),
     url = require("url"),
     mysql = require("mysql");
     var port = process.env.PORT || 1337;
 
 var connection = mysql.createConnection({
-    host: "stardock.cs.virginia.edu",
-    user: "cs4720eea4ue",
-    password: "spring2014",
-    database: "cs4720eea4ue"
+    host: "HOSTNAME",
+    user: "USERNAME",
+    password: "PASSWORD",
+    database: "DATABASE NAME"
 });
 
 connection.connect();
